@@ -6,22 +6,30 @@
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
+ * 3. Fix box-sizing
+ * 4. Set a base font-size of 10pt:
+      by default, fonts using rem units are value*10 (1.5rem * 10pt = 15pt),
+      but we can adjust the font-size of html at will and all fonts will scale as expected
  */
 
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  box-sizing: border-box; /* 3 */
+  font-size: 10pt; /* 4 */
 }
 
 /* Sections
    ========================================================================== */
 
 /**
- * Remove the margin in all browsers.
+ * 1. Remove the margin in all browsers.
+ * 2. Set default body text size as 1.2 rem, or 12pt based on an html font-size of 10pt
  */
 
 body {
-  margin: 0;
+  margin: 0; /* 1 */
+  font-size: 1.2rem; /* 2 */
 }
 
 /**
@@ -30,7 +38,6 @@ body {
  */
 
 h1 {
-  font-size: 2em;
   margin: 0.67em 0;
 }
 
@@ -38,14 +45,11 @@ h1 {
    ========================================================================== */
 
 /**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
+ * Show the overflow in Edge and IE.
  */
 
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  overflow: visible;
 }
 
 /**
